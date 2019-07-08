@@ -60,7 +60,7 @@ print(img_url)
 # print(img_urls)
 # img_url = img_urls[0]
 # img = requests.get(img_url, headers = headers)
-# with open('./haizei/1.jpg', 'wb') as pic:
+# with open('./1.jpg', 'wb') as pic:
 #     pic.write(img.content)
 # pic.close()
 
