@@ -1,0 +1,3 @@
+https://2.python-requests.org//zh_CN/latest/user/quickstart.html
+https://blog.csdn.net/qq_32740675/article/details/79720367
+https://www.cnblogs.com/sss4/p/7809821.htm
