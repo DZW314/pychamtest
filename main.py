@@ -20,23 +20,47 @@ __mtime__ = '2019/6/26'
                ┗┻┛ ┗┻┛
 """
 import requests
-import bs4
+import time
 import re
-
+from concurrent.futures import ThreadPoolExecutor
+from selenium import webdriver
+#define the parameters
 url_header = 'https://www.manhuadui.com/manhua/douluodalu/' #douluodalu/979.html?p=1
 headers = {'Referer': url_header, 'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'}
 url = url_header + '979.html?p=2'
-r = requests.get(url, headers = headers)
-if r.status_code == 200:
-    print("URL get OK.")
-else:
-    print(r.status_code)
-print(url)
-with open('./1.html', 'wb') as f:
+p = ThreadPoolExecutor(30)
+
+# catch the info
+driver = webdriver.PhantomJS(executable_path='./phantomjs.exe') #add phantomjs.exe
+driver.get(url)
+# html = driver.page_source
+img_html = driver.find_element_by_id('images').find_element_by_tag_name('img').get_attribute('src')
+# print(img_html)
+r =requests.get(img_html,headers = headers)
+
+#save the data
+with open('./Datas/1.jpg','wb') as f:
     f.write(r.content)
 f.close()
-img_url = re.findall(r'id="images".*?src="(.*?)"', r.text,re.S)
-print(img_url)
+
+
+
+
+
+
+# r = requests.get(url, headers = headers)
+# if r.status_code == 200:
+#     print("URL get OK.")
+# else:
+#     print(r.status_code)
+# print(url)
+
+# with open('./1.html', 'wb') as f:
+#     f.write(html.encode())
+# f.close()
+
+# img_url = re.findall(r'id="images".*?src="(.*?)"', r.text,re.S)
+# print(img_url)
 
 # with open('./1.jpg','wb') as code:
 #     code.write(r.content)# code.close()
