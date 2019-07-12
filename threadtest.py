@@ -37,7 +37,7 @@ def assign_id(people):
         time.sleep(0.5)
 
 def print_line1():
-    time.sleep(3)
+    time.sleep(5)
     print('-----1-----')
     print('-----2-----')
     print('-----3-----')
@@ -56,7 +56,7 @@ def print_line2():
 
 def main():
     print('-------Line-------')
-    executor = ThreadPoolExecutor(max_workers=4)
+    executor = ThreadPoolExecutor(max_workers=2)
     task1 = executor.submit(print_line1)
     task2 = executor.submit(print_line2)
     print('-------Line-------')
