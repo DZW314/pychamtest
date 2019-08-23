@@ -3,3 +3,4 @@ https://blog.csdn.net/qq_32740675/article/details/79720367
 https://www.cnblogs.com/sss4/p/7809821.html
 https://blog.csdn.net/sunnyxiaohu/article/details/50787430
 http://lib.kaikeba.com/course/python/?ss=fs1
+https://www.jianshu.com/p/3c790e98ea8d   #Python实现接口测试中的常见四种Post请求数据
