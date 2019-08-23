@@ -13,4 +13,6 @@ class HhimmItem(scrapy.Item):
     # name = scrapy.Field()
     title = scrapy.Field()
     link = scrapy.Field()
+    image_urls = scrapy.Field()
+    images = scrapy.Field()
     pass

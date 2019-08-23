@@ -20,7 +20,7 @@ NEWSPIDER_MODULE = 'hhimm.spiders'
 USER_AGENT  =['Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.54 Safari/536.5']
 FEED_URI = u'file:///e:/Music.csv'      #文件保存路径
 FEED_FORMAT = 'CSV'
-
+FEED_EXPORT_ENCODING = 'GBK'
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 
@@ -70,7 +70,8 @@ ROBOTSTXT_OBEY = False
 #ITEM_PIPELINES = {
 #    'hhimm.pipelines.HhimmPipeline': 300,
 #}
-
+ITEM_PIPELINES = {'hhimm.pipelines.ImagePipeline': 100}
+IMAGES_STORE = './'
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
